@@ -105,10 +105,12 @@
             return type.GetTypeInfo().IsDefined(attributeType, inherit);
         }
 
+#if !DOTNET54
         public static PropertyInfo GetProperty(this Type type, string name)
         {
             return type.GetTypeInfo().GetDeclaredProperty(name);
         }
+#endif
 
         public static Boolean IsStructType(this Type type)
         {
